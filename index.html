@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Landing Page with Dark Mode</title>
+  
+  <!-- Darkmode.js from CDN (version may change) -->
+  <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+
+  <!-- Link to your custom stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>Landing Page with Dark Mode</h1>
+
+  <!-- DARK MODE JS CONFIGURATION -->
+  <script>
+    // Configure Darkmode.js
+    const options = {
+      bottom: '32px', // default: '32px'
+      right: '32px', // default: '32px'
+      left: 'unset', // default: 'unset'
+      time: '0.3s', // transition time
+      backgroundColor: '#FFFFFF',  // Light mode background
+      buttonColorDark: '#2C2C2C',  // Button in dark mode
+      buttonColorLight: '#FFFFFF', // Button in light mode
+      saveInCookies: true,        // Remember user preference
+      label: '🌓',                // Button label
+      autoMatchOsTheme: true      // Match with OS theme
+    };
+
+    const darkmode = new Darkmode(options);
+    darkmode.showWidget();
+  </script>
+
+</body>
+</html>
