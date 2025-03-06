@@ -1,28 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
+
 <head>
   <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Landing Page with Dark Mode</title>
-  
-  <!-- Darkmode.js from CDN (version may change) -->
+  <title>Parallax Scrolling Website W/ Darkmode</title>
+  <!-- Darkmode.js from CDN -->
   <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
-
-  <!-- Link to your custom stylesheet -->
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
+
+
 <body>
 
     <header>
-        <h1>Landing Page with Dark Mode</h1>
+        <h2 class="logo">Logo</h2>
+        <nav class="navigation"> 
+          <a href="#" class="active">Home</a>
+          <a href="#">About</a>
+          <a href="#">Services</a>
+          <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <section class="parallax">
+      <img src="hill4.png" alt="hill4" id="hill4">
+      <img src="hill5.png" alt="hill5" id="hill5">
+      <img src="hill3.png" alt="hill3" id="hill3">
+      <img src="hill2.png" alt="hill2" id="hill2">
+      <img src="hill.png" alt="hill1" id="hill1">
+      <img src="tree1.png" alt="tree1" id="tree1">
+      <img src="tree2.png" alt="tree2" id="tree2">
+      <img src="bush.png" alt="bush" id="bush">
+      <h2 id="text">Parallax</h2>
+    </section>
+
+    <section class="sec">
+      <h2>Parallax Scrolling Design</h2>
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+    </section>
 
   <!-- DARK MODE JS CONFIGURATION -->
   <script>
     // Configure Darkmode.js
     const options = {
-      bottom: '32px', // default: '32px'
-      right: '32px', // default: '32px'
-      left: 'unset', // default: 'unset'
+      top: '32px', // default: '32px'
+      left: '32px', // default: '32px'
+      right: 'unset', // default: 'unset'
       time: '0.3s', // transition time
       backgroundColor: '#FFFFFF',  // Light mode background
       buttonColorDark: '#2C2C2C',  // Button in dark mode
@@ -35,6 +61,7 @@
     const darkmode = new Darkmode(options);
     darkmode.showWidget();
   </script>
+  <script src="script.js"></script>
 
 </body>
 </html>
