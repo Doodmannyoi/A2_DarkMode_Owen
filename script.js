@@ -12,12 +12,14 @@ window.addEventListener('scroll',() => {
     tree1.style.top = value * -0.5 + 'px';
     tree1.style.left = value * 1.5 + 'px';
     hill3.style.left = value * 0.5 + 'px';
-    hill3.style.top = value * 0.1 + 'px';
+    hill3.style.top = value * 0.5 + 'px';
 
     hill2.style.left = value * -0.5 + 'px';
+    hill2.style.top = value * 0.5 + 'px';
     hill5.style.top = value * 0.5 + 'px';
     tree2.style.top = value * 0.2 + 'px';
-    hill1.style.left = value * 0.15 + 'px';
+    hill1.style.top = value * 0.5 + 'px';
+    bush.style.top = value * 0.5 + 'px';
 
     }); 
 

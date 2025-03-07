@@ -1,67 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Parallax Scrolling Website W/ Darkmode</title>
   <!-- Darkmode.js from CDN -->
   <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
   <link rel="stylesheet" href="style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <style>
+    .darkmode-layer {
+      position: fixed;
+      top: 32px;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 9999;
+      pointer-events: none;
+    }
+  </style>
 </head>
 
+<body class="darkmode">
 
-<body>
+  <header>
+    <nav class="navigation">
+      <a href="#" class="active">Home</a>
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Contact</a>
+    </nav>
+    <button id="darkmode-toggle" class="btn btn-dark">Toggle Dark Mode</button>
+  </header>
 
-    <header>
-        <h2 class="logo">Logo</h2>
-        <nav class="navigation"> 
-          <a href="#" class="active">Home</a>
-          <a href="#">About</a>
-          <a href="#">Services</a>
-          <a href="#">Contact</a>
-        </nav>
-    </header>
+  <section class="parallax">
+    <img src="hill4.png" alt="hill4" id="hill4">
+    <img src="hill5.png" alt="hill5" id="hill5">
+    <h2 id="text">Parallax</h2>
+    <img src="hill3.png" alt="hill3" id="hill3">
+    <img src="hill2.png" alt="hill2" id="hill2">
+    <img src="hill.png" alt="hill1" id="hill1">
+    <img src="tree1.png" alt="tree1" id="tree1">
+    <img src="tree2.png" alt="tree2" id="tree2">
+    <img src="bush.png" alt="bush" id="bush">
+  </section>
 
-    <section class="parallax">
-      <img src="hill4.png" alt="hill4" id="hill4">
-      <img src="hill5.png" alt="hill5" id="hill5">
-      <img src="hill3.png" alt="hill3" id="hill3">
-      <img src="hill2.png" alt="hill2" id="hill2">
-      <img src="hill.png" alt="hill1" id="hill1">
-      <img src="tree1.png" alt="tree1" id="tree1">
-      <img src="tree2.png" alt="tree2" id="tree2">
-      <img src="bush.png" alt="bush" id="bush">
-      <h2 id="text">Parallax</h2>
-    </section>
-
-    <section class="sec">
-      <h2>Parallax Scrolling Design</h2>
-      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-    </section>
-
-  <!-- DARK MODE JS CONFIGURATION -->
-  <script>
-    // Configure Darkmode.js
-    const options = {
-      top: '32px', // default: '32px'
-      left: '32px', // default: '32px'
-      right: 'unset', // default: 'unset'
-      time: '0.3s', // transition time
-      backgroundColor: '#FFFFFF',  // Light mode background
-      buttonColorDark: '#2C2C2C',  // Button in dark mode
-      buttonColorLight: '#FFFFFF', // Button in light mode
-      saveInCookies: true,        // Remember user preference
-      label: '🌓',                // Button label
-      autoMatchOsTheme: true      // Match with OS theme
-    };
-
-    const darkmode = new Darkmode(options);
-    darkmode.showWidget();
-  </script>
+  <section class="sec">
+    <h2>Parallax Scrolling Design</h2>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+      standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a
+      type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+      remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
+      Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions
+      of Lorem Ipsum.</p>
+  </section>
   <script src="script.js"></script>
 
+  <script>
+    const options = {
+      bottom: 'unset', // default: '32px'
+      right: 'unset', // default: '32px'
+      left: '20px', // Adjust this value to match the logo's left position
+      top: '32px', // Adjust this value to match the logo's top position
+      time: '0.5s', // default: '0.3s'
+      mixColor: '#fff', // default: '#fff'
+      saveInCookies: false, // default: true,
+      autoMatchOsTheme: true // default: true
+    }
+
+    window.addEventListener('DOMContentLoaded', (event) => {
+      const darkmode = new Darkmode(options);
+      darkmode.showWidget();
+
+      document.getElementById('darkmode-toggle').addEventListener('click', () => {
+        darkmode.toggle();
+      });
+    });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
+
 </html>
